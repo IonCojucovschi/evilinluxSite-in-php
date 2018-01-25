@@ -120,11 +120,11 @@ echo '<div id="box2">
 
 }
 
-function Anunturi($urlImage,$Continut,$urlMore){
+function Anunturi($Title,$urlImage,$urlMore){
 
 echo '<li class="first">
 						<h3><em><img src="'.$urlImage.'" alt="" width="130" height="130" class="alignleft border" /></em></h3>
-						<p>'.$Continut.'</p>
+						<p>'.$Title.'</p>
 						<p><a href="'.$urlMore.'" class="button-style">Cite&#537te mai departe...</a></p>
 					</li>';
 

@@ -15,7 +15,7 @@ $Row=mysqli_query($CONNECT,"INSERT INTO anunt VALUES ('','$_POST[titlul]','$_POS
 //echo var_dump($Row);
 if (move_uploaded_file($_FILES['image']['tmp_name'],$imaginea)) {
   		$msg = "Image uploaded successfully";
-  		MesageSend(1,': '.$msg.' some','/adaogaanunt');
+  		MesageSend(3,': '.$msg.' some','/adaogaanunt');
   	}else{
   		$msg = "Failed to upload image";
   		MesageSend(1,': '.$msg.' some','/adaogaanunt');
