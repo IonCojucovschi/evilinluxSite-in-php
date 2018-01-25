@@ -5,7 +5,7 @@ Head('Denumirea paginii');
 <body>
 <div id="wrapper">
 	<div id="page" class="container">
-		<div id="content"> <a href="#" class="image-style"><img src="images/img03.jpg" width="725" height="300" alt="" /></a>
+		<div id="content"> <a href="#" class="image-style"><img src="images/img5.jpg" width="725" height="300" alt="" /></a>
 			<?php HelloFromPage('Forma de adaogare a anunturilor',MessageShow());	
 
 			?>

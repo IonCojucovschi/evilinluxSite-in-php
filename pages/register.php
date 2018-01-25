@@ -5,7 +5,7 @@ Head('Inregistrare Companie');
 <body>
 <div id="wrapper">
 	<div id="page" class="container">
-		<div id="content"> <a href="#" class="image-style"><img src="images/img03.jpg" width="725" height="300" alt="" /></a>
+		<div id="content"> <a href="#" class="image-style"><img src="images/img5.jpg" width="725" height="300" alt="" /></a>
 			<?php HelloFromPage('EVILINLUx ',MessageShow());	
 
 			?>
@@ -32,12 +32,14 @@ Head('Inregistrare Companie');
               <option>Al doilea</option>
              </select><br> <br> 
             <label>Logoul companiei :</label>
-            <input  id="image" name ="image"  type="file" autofocus required><br>
+            <input  id="image" name ="image"  type="file" autofocus required>
        </fieldset>
         
             
 
-        <p><input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Inregistreaza Intreprindere " href='/accountsmanager'></p>
+        <input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Inregistreaza Intreprindere " href='/accountsmanager'>
+            <input input style="background:#fc4b4b; padding: 10px; border-radius: 5px;" type="button" name ="enter" value="Inapoi" onclick="window.location.href='/profile'">
+
   </form>
 			 <?php Footer();?>
 		</div>

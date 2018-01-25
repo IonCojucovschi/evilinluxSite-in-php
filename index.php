@@ -32,6 +32,11 @@ elseif($Page=='adaogaanunt') include('pages/adaogaanunt.php');
 elseif($Page=='addanunturi') include('forms/addanunturi.php');
 elseif($Page=='register') include('pages/register.php');
 elseif($Page=='accountsmanager')include('forms/accountsmanager.php');
+elseif($Page=='directori')include('pages/directori.php');
+elseif($Page=='profile')include('pages/profile.php');
+elseif($Page=='login')include('pages/login.php');
+elseif($Page=='updateusr')include('pages/updateusr.php');
+
 
 //////transmite mesaje la o adresa a paginii 
 
@@ -72,20 +77,36 @@ function Head($p1){
 
 function Logo(){
 
-echo '<div id="sidebar">
-			<div id="logo">
-				<h1><a href="#">EvilinLux</a></h1>
-			</div>
-			<div id="menu" class="box">
-				<ul>
-					<li><a href="/adaogaanunt" accesskey="1" title="">Anunturi</a></li>
-					<li><a href="#" accesskey="2" title="">Clien&#539i</a></li>
-					<li><a href="#" accesskey="3" title="">Informa&#539ii</a></li>
-					<li><a href="#" accesskey="4" title="">&#206nregistrare</a></li>
-					<li><a href="#" accesskey="5" title="">Contacte</a></li>
-				</ul>
-			</div>
-		</div>';
+		if($_SESSION['USER_ROLE']=='admin'){
+	$elements='<li><a href="/adaogaanunt" accesskey="1" title="">Anunturi</a></li>
+	    <li><a href="#" accesskey="2" title="">Clien&#539i</a></li>
+	';
+
+	}
+
+	if($_SESSION['USER_LOGIN_IN']==1){
+		$elements.='<li><a href="/profile" accesskey="3" title="">Profil</a></li>
+		<li><a href="/accountsmanager/logout" accesskey="3" title="">Iesi</a></li>';
+	}else{
+
+		$elements.='<li><a href="/directori" accesskey="4" title="">&#206nregistrare</a></li>
+		<li><a href="/login" accesskey="4" title="">Logare</a></li>';
+	}
+
+
+
+	echo '<div id="sidebar">
+				<div id="logo">
+					<h1><a href="#">EvilinLux</a></h1>
+				</div>
+				<div id="menu" class="box">
+					<ul>
+					<li><a href="/index" accesskey="5" title="">Acasa</a></li>
+						<li><a href="#" accesskey="5" title="">Contacte</a></li>
+						'.$elements.'
+					</ul>
+				</div>
+			</div>';
 
 }
 
@@ -122,41 +143,26 @@ echo '<div id="box2">
 
 function Anunturi($Title,$urlImage,$urlMore){
 
-echo '<li class="first">
-						<h3><em><img src="'.$urlImage.'" alt="" width="130" height="130" class="alignleft border" /></em></h3>
-						<p>'.$Title.'</p>
-						<p><a href="'.$urlMore.'" class="button-style">Cite&#537te mai departe...</a></p>
-					</li>';
+echo '<li >
+      <h3><em><img src="'.$urlImage.'" alt="" width="130" height="130" class="alignleft border" /></em></h3>
+	  <p>'.$Title.'</p>
+	  <p><a href="'.$urlMore.'" class="button-style">Cite&#537te mai departe...</a></p>
+	</li><br>';
+}
+
+function IntreprindereDetalii($numeleIntr,$num_ang,$serviciul){
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo ' <div>
+        <ul class="data-user">
+         <li><a><strong>'.$numeleIntr.'</strong><span>Intreprinderea</span></a></li>
+         <li><a><strong>'.$num_ang.'</strong><span>Numarul de angajati</span></a></li>
+         <li><a><strong>'.$serviciul.'</strong><span></span>Serviciul prestat</a></li>
+        </ul>
+      </div>';
 
 
 }
-
-
 
 
 
