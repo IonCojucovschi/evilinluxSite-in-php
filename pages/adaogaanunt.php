@@ -16,7 +16,7 @@ Head('Denumirea paginii');
            <legend>Detaliile Anuntului</legend>
             <input class="registercomponent"  id="name" name="titlul" placeholder="Titlul" autofocus required maxlength="49" title="Trebuie sa fie cuprins intre 3 si 10 simboluri"><br><br> 
             
-            <textarea id="continut" name="continut" placeholder="Continutul textului" rows="10" cols="100" ></textarea><br><br> 
+            <textarea id="continut" name="continut" placeholder="Continutul anuntului" rows="10" cols="90" ></textarea><br><br> 
 
             <select class="registercomponent"  id="category" name="category">
               <option>Codul muncii</option>

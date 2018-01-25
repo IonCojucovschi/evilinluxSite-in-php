@@ -30,15 +30,15 @@ $Module=array_shift($URL_Parts);
 if($Page=='index') include('pages/index.php');
 elseif($Page=='adaogaanunt') include('pages/adaogaanunt.php');
 elseif($Page=='addanunturi') include('forms/addanunturi.php');
-
-
+elseif($Page=='register') include('pages/register.php');
+elseif($Page=='accountsmanager')include('forms/accountsmanager.php');
 
 //////transmite mesaje la o adresa a paginii 
 
 function MesageSend($p1,$p2,$p3=''){
-if($p1==1) $p1='Eroare';
-else if($p1==2) $p1='Hint';
-else if ($p1==3) $p1='Informatie';
+if($p1==1) $p1='Eroare :';
+else if($p1==2) $p1='Hint :';
+else if ($p1==3) $p1='Informatie :';
 
 if($p3) $_SERVER['HTTP_REFERER']=$p3;
 
