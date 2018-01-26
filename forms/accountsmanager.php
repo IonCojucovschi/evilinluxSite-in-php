@@ -10,7 +10,7 @@ if($Module=='register' and  $_POST['enter']){
 	//echo var_dump($firma);
 	if($firma)MesageSend(3,'Intreprindere cu asa date mai exista.');
 
-    mysqli_query($CONNECT,"INSERT INTO `clienti` VALUES ('','$_POST[intreprindere]','$_POST[director]' ,'$_POST[servicii]','$_POST[angajati]' ,'$_POST[perioada]','$imaginea')");
+    mysqli_query($CONNECT,"INSERT INTO `clienti` VALUES ('','$_POST[intreprindere]','$_POST[director]' ,'$_POST[servicii]','$_POST[angajati]' ,'$_POST[perioada]','$imaginea',$_SESSION[USER_ID])");
 	//echo var_dump($Row);
 	if (move_uploaded_file($_FILES['image']['tmp_name'],$imaginea)) {
 	 $msg = "Image uploaded successfully";
@@ -43,7 +43,7 @@ if(!$isValid)MesageSend(3,'Nu exista asa utilizator.');
     $_SESSION['USER_ID']=$isValid['id'];
 	$_SESSION['USER_NAME']=$isValid['nume'];
 	$_SESSION['USER_SURNAME']=$isValid['prenume'];
-	$_SESSION['USER_EMAIL']=$isValid['data_n'];
+	$_SESSION['USER_DATAN']=$isValid['data_n'];
 	$_SESSION['USER_LOGIN']=$isValid['login'];
 	$_SESSION['USER_PASWORD']=$isValid['pasword'];
 	$_SESSION['USER_ROLE']=$isValid['roles'];
@@ -60,6 +60,25 @@ session_unset();
   //session_destroy();
 
    exit( header('Location: /login'));
+
+}elseif($Module=='updateusr' and $_POST['enter']){
+///   echo 'se proceseaza';
+
+if($_POST['observatii']){
+
+	mysqli_query($CONNECT,"UPDATE `directori` SET `observatii`='$_POST[observatii]' ");
+}
+if(!$_POST['paswordo'] and $_POST['paswordn'])MesageSend(1,'Introduceti parola veche.');
+if($_POST['paswordo'] and !$_POST['paswordn'])MesageSend(1,'Introduceti parola Noua.');
+if($_POST['paswordo']==$_SESSION['USER_PASWORD'] and $_POST['paswordn']){
+    mysqli_query($CONNECT,"UPDATE `directori` SET pasword='$_POST[paswordn]'");
+   $_SESSION['USER_PASWORD']= $_POST['paswordn'];
+}else{
+
+	MesageSend(1,'Parola veche este introdusa gresit.');
+}
+
+
 
 }
 

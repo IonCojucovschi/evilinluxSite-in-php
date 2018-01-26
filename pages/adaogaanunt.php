@@ -32,7 +32,7 @@ Head('Denumirea paginii');
         
             
 
-        <p><input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Adauga Anunt " href='/addanunturi'></p>
+        <input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Adauga Anunt " href='/addanunturi'><input input style="background:#fc4b4b; padding: 10px; border-radius: 5px;" type="button" name ="enter" value="Inapoi" onclick="window.location.href='/index'">
   </form>
 			 <?php Footer();?>
 		</div>

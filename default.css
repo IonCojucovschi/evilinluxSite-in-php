@@ -299,7 +299,9 @@ ul.style1 .first {
 .MessageBlock{
 border:1px solid #6c9ae2;
 background:#f44842;
+ color:#ffffff;
 margin-left: 45px;
+margin-right: 45px;
 }
 
 

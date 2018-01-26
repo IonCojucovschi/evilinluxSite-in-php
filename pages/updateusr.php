@@ -1,24 +1,23 @@
 <?php
-Head('Inregistrare Companie');
+Head('Modificare date personale');
 ?>
 
 <body>
 <div id="wrapper">
 	<div id="page" class="container">
 		<div id="content"> <a href="#" class="image-style"><img src="images/img5.jpg" width="725" height="300" alt="" /></a>
-			<?php HelloFromPage('EVILINLUx ',MessageShow());	
+			<?php HelloFromPage('Modificaca date personale',MessageShow());	
 
 			?>
 
               <div class="user_form">
               <form class="register"  method="POST" action="/accountsmanager/updateusr" onsubmit="return validateForm()" enctype="multipart/form-data">              
-              Nume Director: <input type="text" autofocus name="nume"><br><br>
-              Prenume Director: <input type="text" autofocus name="prenume"><br><br>
-              Ziua/ Luna/ Anul nasterii: <input autofocus type="date" name="data"><br><br>
-              Loghin: <input autofocus type="text" name="login"><br><br>
-              Parola: <input autofocus type="password" name="password"><br><br>
-              <textarea autofocus name="observatii" rows="5" cols="60" value="Sugestii"></textarea><br><br>
-              <p><input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Inregistrare" href='/accountsmanager'></p>
+              Parola veche: <input autofocus type="password" name="paswordo"><br><br>
+              Parola noua: <input autofocus type="password" name="paswordn"><br><br>
+
+              <textarea autofocus name="observatii" rows="7" cols="60" placeholder="Sugestii"></textarea><br><br>
+              <input style="background:#68bb54; padding: 10px; border-radius: 5px;" type="submit" name ="enter" value="Inregistrare" href='/accountsmanager'>
+              <input input style="background:#fc4b4b; padding: 10px; border-radius: 5px;" type="button" name ="enter" value="Inapoi" onclick="window.location.href='/profile'">
              
               </form>
               </div>
