@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 25, 2018 at 04:52 PM
--- Server version: 5.6.37
+-- Generation Time: Jan 26, 2018 at 04:38 PM
+-- Server version: 5.6.38
 -- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -70,7 +70,10 @@ CREATE TABLE `clienti` (
 INSERT INTO `clienti` (`id`, `intreprindere`, `director`, `servicii`, `nr_personal`, `perioada`, `image`, `id_director`) VALUES
 (1, 'Evilinux', 'Secrieru silvia', NULL, NULL, NULL, NULL, 1),
 (2, 'sdfasdf', 'adsfasdfasd', 'Resurse Umane', 1, 0, 'image addres', 2),
-(3, 'Amdaris', 'ME', 'Resurse Umane', 1, 0, 'image addres', 1);
+(3, 'Amdaris', 'ME', 'Resurse Umane', 1, 0, 'image addres', 1),
+(4, 'BSSONE', 'ME', 'Resurse Umane', 14, 0, 'images/img/BSSONEbg2x.png', 2),
+(5, 'Cedacri', 'Ungur4eanu ana', 'Contabilitate', 6, 0, 'images/img/Cedacribg2x.png', 3),
+(6, 'UST', 'Ungureanu Ana ', 'Resurse Umane', 6, 0, 'images/img/USTbg2x.png', 3);
 
 -- --------------------------------------------------------
 
@@ -85,16 +88,18 @@ CREATE TABLE `directori` (
   `data_n` date DEFAULT NULL,
   `login` varchar(15) DEFAULT NULL,
   `pasword` varchar(15) DEFAULT NULL,
-  `roles` varchar(10) NOT NULL
+  `roles` varchar(10) NOT NULL,
+  `observatii` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `directori`
 --
 
-INSERT INTO `directori` (`id`, `nume`, `prenume`, `data_n`, `login`, `pasword`, `roles`) VALUES
-(1, 'dasfasdf', 'adfasdfasd', '2018-01-18', 'adsfasdfasdf', 'asdfasdfasdf', ''),
-(2, 'admin', 'admin', '2018-01-12', 'admin', 'admin', 'admin');
+INSERT INTO `directori` (`id`, `nume`, `prenume`, `data_n`, `login`, `pasword`, `roles`, `observatii`) VALUES
+(1, 'dasfasdf', 'adfasdfasd', '2018-01-18', 'adsfasdfasdf', 'admin', '', 'asdfasdf'),
+(2, 'admin', 'admin', '2018-01-12', 'admin', 'admin', 'admin', 'asdfasdf'),
+(3, 'ana', 'ana', '2018-01-09', 'ana', 'ana', 'user', 'ceva ta ');
 
 --
 -- Indexes for dumped tables
@@ -132,16 +137,19 @@ ALTER TABLE `directori`
 --
 ALTER TABLE `anunt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `clienti`
 --
 ALTER TABLE `clienti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `directori`
 --
 ALTER TABLE `directori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
