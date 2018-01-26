@@ -14,7 +14,7 @@ if($Module=='register' and  $_POST['enter']){
 	//echo var_dump($Row);
 	if (move_uploaded_file($_FILES['image']['tmp_name'],$imaginea)) {
 	 $msg = "Image uploaded successfully";
-	 MesageSend(3,': '.$msg.' some','/adaogaanunt');
+	 MesageSend(3,':Intreprinderea este inregistrata.','/profile');
 	}else{
 	$msg = "Failed to upload image";
 	MesageSend(1,': '.$msg.' some','/adaogaanunt');
@@ -28,7 +28,7 @@ if(!$_POST['nume'] or !$_POST['prenume'] or !$_POST['data'] or !$_POST['login'] 
 $existlog=mysqli_fetch_assoc(mysqli_query($CONNECT,"SELECT `login` FROM `directori` WHERE `login`='$_POST[login]'"));
 if($existlog)MesageSend(1,'Exista utilizator cu acest login incercati altul.');
 
-mysqli_query($CONNECT,"INSERT INTO `directori` VALUES ('','$_POST[nume]','$_POST[prenume]','$_POST[data]','$_POST[login]','$_POST[password]','user')");
+mysqli_query($CONNECT,"INSERT INTO `directori` VALUES ('','$_POST[nume]','$_POST[prenume]','$_POST[data]','$_POST[login]','$_POST[password]','user','$_POST[observatii]')");
 MesageSend(3,': '.$msg.' some','/index');
 
 
@@ -48,6 +48,7 @@ if(!$isValid)MesageSend(3,'Nu exista asa utilizator.');
 	$_SESSION['USER_PASWORD']=$isValid['pasword'];
 	$_SESSION['USER_ROLE']=$isValid['roles'];
 	$_SESSION['USER_LOGIN_IN']=1;
+	$_SESSION['LOGO_IMG']="images/img5.jpg";
  MesageSend(3,' valoarea Session[userlogin]='.$_SESSION['USER_LOGIN_IN'],'/profile');
 
 
@@ -82,8 +83,11 @@ if($_POST['paswordo']==$_SESSION['USER_PASWORD'] and $_POST['paswordn']){
 
 	MesageSend(1,'Parola veche este introdusa gresit.','/updateusr');
 }
+}elseif($Module=='intreprindere' ){
 
 
+
+	
 }
 
 
