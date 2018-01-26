@@ -61,30 +61,30 @@ session_unset();
 
    exit( header('Location: /login'));
 
+
 }elseif($Module=='updateusr' and $_POST['enter']){
 ///   echo 'se proceseaza';
 
 if($_POST['observatii']){
 
 	mysqli_query($CONNECT,"UPDATE `directori` SET `observatii`='$_POST[observatii]' ");
+	MesageSend(3,'Sugestiile dumnedoastra au fost updatate cu succes.','/updateusr');
+
 }
 if(!$_POST['paswordo'] and $_POST['paswordn'])MesageSend(1,'Introduceti parola veche.');
 if($_POST['paswordo'] and !$_POST['paswordn'])MesageSend(1,'Introduceti parola Noua.');
 if($_POST['paswordo']==$_SESSION['USER_PASWORD'] and $_POST['paswordn']){
     mysqli_query($CONNECT,"UPDATE `directori` SET pasword='$_POST[paswordn]'");
    $_SESSION['USER_PASWORD']= $_POST['paswordn'];
+	MesageSend(3,'Datele sau  modificat cu succes.','/updateusr');
+
 }else{
 
-	MesageSend(1,'Parola veche este introdusa gresit.');
+	MesageSend(1,'Parola veche este introdusa gresit.','/updateusr');
 }
 
 
-
 }
-
-
-
-
 
 
 

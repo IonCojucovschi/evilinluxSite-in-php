@@ -10,7 +10,7 @@ Head('Denumirea paginii');
                         <div class="profile-user-page card">
                            <div class="img-user-profile">
                              <img class="profile-bgHome" src="images/img02.jpg" />
-                             <img class="avatar" src=""/>
+                             <img class="avatar" src="images/img5.jpg"/>
                                 </div>
                                 <button onclick="window.location.href='/register'">Adauga intreprindere</button>
                                  <br><br><br>
@@ -33,14 +33,4 @@ Head('Denumirea paginii');
 </div>
 </body>
 </html>
-
-
- $_SESSION['USER_ID']=$isValid['id'];
-  $_SESSION['USER_NAME']=$isValid['nume'];
-  $_SESSION['USER_SURNAME']=$isValid['prenume'];
-  $_SESSION['USER_EMAIL']=$isValid['data_n'];
-  $_SESSION['USER_LOGIN']=$isValid['login'];
-  $_SESSION['USER_PASWORD']=$isValid['pasword'];
-  $_SESSION['USER_ROLE']=$isValid['roles'];
-  $_SESSION['USER_LOGIN_IN']=1;
 
